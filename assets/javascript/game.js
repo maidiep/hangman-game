@@ -1,22 +1,27 @@
 var name = prompt ("What is your name?");
-console.log ( "Hello " + name);
+confirm ( "Hello " + name + "." + " Let's play Hangman!");
 
 var wordBank = ["blocks", "creative", "world", "mobile", "craft" ];
 var word = wordBank[Math.floor(Math.random() * wordBank.length)];
 console.log (word);
 
-var wordBlanks = [];
+var blank = [];
 for (var i = 0; i < word.length; i++) {
- wordBlanks[i] = "_";
+ blank[i] = "_";
 }
-var remainingLetters = word.length;
-console.log (wordBlanks);
 
 var remainingLetters = word.length;
-console.log (remainingLetters);
-
 while (remainingLetters > 0) {
-    document.write(wordBlanks.join(" "));
+    alert(blank.join(" "));
+var guess = prompt ("Guess a letter.");
+for (var j = 0; j < word.length; j++) {
+    if (word[j] === guess) {
+    blank[j] = guess;
+    remainingLetters--;
+
+ }
 }
-var userGuess = prompt("Guess a letter by pressing a letter key or click Cancel to stop playing.");
-console.log (userGuess);
+}
+
+alert(blank.join(" "));
+alert("Good work! The word was " + word + ".");
