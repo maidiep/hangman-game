@@ -1,10 +1,15 @@
-body {
-    background-color: rgb(145, 199, 64)
+body { 
+    background-color: rgb(142, 204, 50);
+    background-image: url("../images/minecraft.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
 }
 
 h1 {
-    color: black;
+    color: white;
     text-align: center;
+    font-weight: bolder;
 }
 
 h2 {
@@ -22,7 +27,7 @@ h2 {
     margin-right: auto;
 }
 
-img {
-    width: 100%
+.main {
+    opacity: .5;
 }
- 
+
