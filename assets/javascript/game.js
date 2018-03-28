@@ -1,12 +1,23 @@
 var wordBank = ["blocks", "creative", "world", "mobile", "craft"];
+var word = wordBank[Math.floor(Math.random() * wordBank.length)];
 
 
-var blank = [];
-for (var i = 0; i < word.length; i++) {
-blank[i] = "_";
-}
+document.getElementById("wordContainer").innerHTML = word;
 
-document.getElementById("word").innerHTML = "blank[i]";
+
+
+
+
+
+
+
+
+// var blank = [];
+// for (var i = 0; i < word.length; i++) {
+// blank[i] = "_";
+// }
+
+// document.getElementById("word").innerHTML = "blank[i]";
 
 // for (var i = 0; i < word.length; i++) {
 //     var blanks = document.createElement("p");
