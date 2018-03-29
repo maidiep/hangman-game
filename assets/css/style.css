@@ -28,7 +28,14 @@ h2 {
     margin-right: auto;
 }
 
-#word {
+h3 {
     text-align: center;
+    color: white;
+    font-size: 30px;
 }
 
+.game {
+    text-align: center;
+    color: rgb(233, 233, 24);
+    font-size: 30px;
+}
