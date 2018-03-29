@@ -1,6 +1,6 @@
 var wordBank = ["blocks", "creative", "world", "mobile", "craft"];
 var word = wordBank[Math.floor(Math.random() * wordBank.length)];
-var remainingGuesses = word.length;
+var remainingGuesses = 6;
 
 var numSpaces = [];
 for (var i = 0; i < word.length; i++) {
@@ -16,11 +16,14 @@ document.getElementById("wordContainer").innerHTML = numSpaces.join(" ");
 
 //message and end game when counter reaches 0
 
-
-
-
-
-
+var guess = [" "];
+for (var j = 0; j < word.length; j++) {
+    if (word[j] === guess) {
+     numSpaces[j] = guess;
+    remainingGuesses--;
+     }
+    }
+document.getElementById("userguess").innerHTML = remainingGuesses;
 
 
 
