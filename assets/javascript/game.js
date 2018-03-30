@@ -1,6 +1,18 @@
 var wordBank = ["blocks", "creative", "world", "mobile", "craft"];
 var word = wordBank[Math.floor(Math.random() * wordBank.length)];
-var remainingGuesses = 6;
+
+
+var word ;              // Selected word
+var guess ;             // Guess
+var guesses = [ ];      // Stored geusses
+var lives = 6;             // Lives
+var counter ;           // Count correct geusses
+var numSpaces;          // Number of spaces in word '-'
+
+
+var showLives = document.getElementById("lives");
+
+
 
 var numSpaces = [];
 for (var i = 0; i < word.length; i++) {
@@ -8,22 +20,21 @@ for (var i = 0; i < word.length; i++) {
 }
 document.getElementById("wordContainer").innerHTML = numSpaces.join(" ");
 
-//accpeting user guess
 
-//counter for Remaining Guesses, start at 7 and decrease by 1 after each incorrect guess
-
-//update numSpaces when guess are correct
-
-//message and end game when counter reaches 0
-
-var guess = [" "];
-for (var j = 0; j < word.length; j++) {
-    if (word[j] === guess) {
-     numSpaces[j] = guess;
-    remainingGuesses--;
-     }
+comments = function () {
+    remaindGuesses.innerHTML = "You have " + lives + " lives";
+    if (lives < 1) {
+      showLives.innerHTML = "Game Over";
     }
-document.getElementById("userguess").innerHTML = remainingGuesses;
+    for (var i = 0; i < guesses.length; i++) {
+      if (counter + space === guesses.length) {
+        showLives.innerHTML = "You Win!";
+      }
+    }
+  }
+
+
+
 
 
 
