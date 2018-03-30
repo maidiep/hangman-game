@@ -1,39 +1,56 @@
 var wordBank = ["blocks", "creative", "world", "mobile", "craft"];
 var word = wordBank[Math.floor(Math.random() * wordBank.length)];
+var remainingLetters = word.length
+console.log(word)
 
-
-var word ;              // Selected word
-var guess ;             // Guess
-var guesses = [ ];      // Stored geusses
-var lives = 6;             // Lives
-var counter ;           // Count correct geusses
-var numSpaces;          // Number of spaces in word '-'
+var guess;             // Guess
+var guesses = [];      // Stored geusses
+var wordArr = [];      //random word array
+var lives = 6;          // Lives
+var numSpaces = [];     // Number of spaces in word '-'
 
 
 var showLives = document.getElementById("lives");
 
-
-
-var numSpaces = [];
 for (var i = 0; i < word.length; i++) {
- numSpaces[i] = "_"
+  wordArr.push(word[i]);
+}
+
+
+for (var i = 0; i < word.length; i++) {
+  numSpaces[i] = "_"
 }
 document.getElementById("wordContainer").innerHTML = numSpaces.join(" ");
 
+document.onkeyup = function (event) {
+if (lives > 0){
+  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+  console.log(userGuess)
+  if (wordArr.indexOf(userGuess) < 0) {
+    guesses.push(userGuess);
+    lives--;
+    comments();
+  } else {
+    console.log(wordArr.indexOf(userGuess))
+    var guessIndex = wordArr.indexOf(userGuess);
+    numSpaces[guessIndex] = userGuess;
+    document.getElementById("wordContainer").innerHTML = numSpaces.join(" ");
+    comments();
+  }
+}
+}
+
 
 comments = function () {
-    remaindGuesses.innerHTML = "You have " + lives + " lives";
-    if (lives < 1) {
-      showLives.innerHTML = "Game Over";
-    }
-    for (var i = 0; i < guesses.length; i++) {
-      if (counter + space === guesses.length) {
-        showLives.innerHTML = "You Win!";
-      }
-    }
+  showLives.innerHTML = "You have " + lives + " lives";
+  if (lives < 1) {
+    showLives.innerHTML = "Game Over";
   }
-
-
+ if (numSpaces.indexOf("_") < 0) {
+      showLives.innerHTML = "You Win!";
+  }
+}
+comments()
 
 
 
