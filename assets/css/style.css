@@ -42,6 +42,13 @@ h3 {
 p {
     margin: auto;
     text-align: center;
+    color:red;
+    font-size: 18px;
+}
+
+#wrongGuess {
+    margin: auto;
+    text-align: center;
     color: white;
-    font-size: 30px;
+    font-size: 18px;
 }
